@@ -26,6 +26,3 @@ flag[:, :] = gris
 flag[(X*X + Y*Y) <= (r*r), :] = orange
 
 plt.imshow(flag)
-               
-    
-
