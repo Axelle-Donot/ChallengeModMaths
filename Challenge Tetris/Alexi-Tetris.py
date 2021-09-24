@@ -15,7 +15,7 @@ fondgris[0:300,0:300,:] = gris
 fondgris[0:300, 0:50,:] = bleu
 fondgris[0:150, 50:100,:] = orange
 fondgris[50:100, 100:150,:] = orange
-fondgris[150:200, 150:250,:] = vert
+fondgris[(150:200, 150:250,:] = vert
 fondgris[100:150, 200:300,:] = vert
 
 plt.imshow(fondgris)
