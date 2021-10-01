@@ -13,16 +13,20 @@ vert = np.array ([44,160,44], dtype = np.uint8)
 
 # --quart de cercle dans un carré 
 
-A=np.ones ((201,201,3),dtype = np.uint8)* 127
+A=np.ones ((201,201,3),dtype = np.uint8)* (31,119,180)
 
-x=np.arange(-50,151,1)
-y=np.arange(150,-51,-1)
+x=np.arange(-100,101,1)
+y=np.arange(100,-101,-1)
 X,Y = np.meshgrid(x,y)
 
-r=50
+r1=100;
+r2=50;
 
-iorange = (X * X + Y * Y) <= r*r
+ibleu = (X*X + Y*Y) <= r2*r2
+iorange = (X*X + Y*Y) <= r1*r1
+
 A[iorange,:]=orange
+A[ibleu,:]=bleu
 
 
 print ("X :")
