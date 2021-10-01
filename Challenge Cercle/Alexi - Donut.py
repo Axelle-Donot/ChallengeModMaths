@@ -23,7 +23,8 @@ r = 0.5 * nl
 r2 = 0.25 * nl
 
 flag[:,:] = bleu
-flag[(X*X + Y*Y) <= (r*r), :] = orange
-flag[(X*X + Y*Y) <= (r2*r2), :] = bleu
+cercleorange = ((X*X + Y*Y) <= (r*r)) & ((X*X + Y*Y) > (r2*r2))
+
+flag[cercleorange] = orange
 
 plt.imshow(flag)
