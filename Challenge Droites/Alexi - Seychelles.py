@@ -15,7 +15,7 @@ vert = np.array([5, 119, 0], dtype = np.uint8)
 jaune = np.array([255, 216, 0], dtype = np.uint8)
 
 # On définit la taille de l'image 
-nc, nl= (300, 180)
+nc, nl= (1000, 500)
 
 # On initialise l'image blanche avec les coordonnées rentrées
 flag = np.ones((nl, nc, 3), dtype = np.uint8) * 255
@@ -26,9 +26,9 @@ X, Y = np.meshgrid(np.linspace(0, nc, nc),\
                    indexing = 'xy')
     
 ibleu = (Y <= (3/2) * X) & (Y <= - (3/2) * X)
-ijaune = (Y <= 1) & (Y >= - (3/2) * X) & (Y <= - (15 / 18) * X)
-irouge = (Y >= - (15 / 18) * X) & (Y <= - (2 / 5) * X)
-ivert = (Y >= - (3 / 14) * X)
+ijaune = (Y <= 1) & (Y >= - (3/2) * X) & (Y <= - (3/4) * X)
+irouge = (Y >= - (3/4) * X) & (Y <= - (1 / 3) * X)
+ivert = (Y >= - (1 / 6) * X)
 
 flag[ibleu,:] = bleu
 flag[ijaune,:] = jaune
