@@ -1,10 +1,20 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-raton = plt.imread('racoon.png','PNG')
+racoon = plt.imread('racoon.png','PNG')
 
-ratontab = 255 * np.ones((610,813,3), dtype = np.uint8) #on crée un tableau blanc qui va contenir notre image
-ratontab = raton #on met l'image dans le tableau
-plt.imshow(ratontab);
-
-plt.show();
+racoonbis = racoon.copy() * 0
+I = np.arange(768)
+J = np.arange(1024)
+for ibis in I:
+    for jbis in J:
+        xbis = jbis
+        ybis = 768 - 1 - ibis
+        mat = np.array([[2.0/np.sqrt(2),0], [0, 2.0/np.sqrt(2)]]).dot(np.array([[xbis],[ybis]])) - np.array([[212],[158]]) 
+        i = int(767 - mat[1]) 
+        j = int(mat[0])
+        if (i > 0 and j > 0 and i <= 767 and j<= 1023):
+            racoonbis[ibis,jbis] = racoon[i,j]
+                           
+plt.imshow(racoonbis)
+plt.imsave("racoonHomothetie.png", racoonbis)
