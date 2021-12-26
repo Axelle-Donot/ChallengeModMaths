@@ -1,3 +1,4 @@
+"Homothétie de centre A(512,384) et de rapport 1/sqrt(2)"
 import numpy as np
 import matplotlib.pyplot as plt
 
