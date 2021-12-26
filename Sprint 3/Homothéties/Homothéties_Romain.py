@@ -11,7 +11,7 @@ for ibiscus in I:
     for jbiscus in J:
         xbiscus = jbiscus
         ybiscus = 768 - 1 - ibiscus
-        mat = np.array([[np.sqrt(2)/2.0, 0], [0, np.sqrt(2)/2.0]]).dot(np.array([[xbiscus], [jbiscus]])) - np.array([[-150], [-112]]) 
+        mat = np.array([[np.sqrt(2)/2.0, 0], [0, np.sqrt(2)/2.0]]).dot(np.array([[xbiscus], [ybiscus]])) - np.array([[-150], [-112]])
         i = int(767 - mat[1]) 
         j = int(mat[0])
         if (i > 0 and j > 0 and i <= 767 and j<= 1023):
